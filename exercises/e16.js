@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from '../data/data';
 
 // SPACE DATA EXERCISE 16
 // Return the year with the greatest number of Asteroids discoveries
@@ -6,9 +6,16 @@ import { data } from "../data/data";
 
 export function getGreatestDiscoveryYear(data) {
   // Your code goes here...
+  const discoveryYear = {};
+  data.asteroids.map((asteroid) => {
+    const year = asteroid.discoveryYear;
+    discoveryYear[year] = discoveryYear[year] ? discoveryYear[year] + 1 : 1;
+  });
+
+  return +Object.keys(discoveryYear).reduce((a, b) =>
+    discoveryYear[a] > discoveryYear[b] ? a : b
+  );
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-16"

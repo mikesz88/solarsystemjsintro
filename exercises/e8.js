@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from '../data/data';
 
 // SPACE DATA EXERCISE 8
 // Return a Planet name by a given moon name
@@ -6,9 +6,15 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
+  const planetsArray = data.planets.filter((planet) => {
+    if (planet.moons) {
+      return planet.moons.find((moon) => moon === moonName);
+    }
+    return false;
+  });
+  console.log(planetsArray);
+  return planetsArray[0].name;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-8"

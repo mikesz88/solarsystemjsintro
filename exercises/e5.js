@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from '../data/data';
 
 // SPACE DATA EXERCISE 5
 // Return an array with all Planets' names with a massValue greater or equal to a given number (1-7)
@@ -6,9 +6,10 @@ import { data } from "../data/data";
 
 export function getPlanetsWithMassValue(data, number) {
   // Your code goes here...
+  return data.planets
+    .filter((planet) => planet.mass.massValue >= number)
+    .map((plan) => plan.name);
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"
