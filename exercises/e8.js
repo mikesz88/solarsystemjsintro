@@ -12,7 +12,6 @@ export function findPlanetNameByMoon(data, moonName) {
     }
     return false;
   });
-  console.log(planetsArray);
   return planetsArray[0].name;
 }
 
